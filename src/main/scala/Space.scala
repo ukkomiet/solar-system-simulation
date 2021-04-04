@@ -9,14 +9,14 @@ class Space {
   var bodies = Vector[AstralBody]()
 
   /** Keeps track of time in seconds */
-  var time: Long = 0
+  var time: Long = 0                        // Unit: s
 
   /** Current timeStep set by user, this is how much time is added to 'time' after each step. The unit
    *  of a step is a second */
-  var timeStep = 0
+  var timeStep = 0                          // Unit: s
 
   /** Holds the current Newtonian gravity-constant */
-  val G: Double = 1     // 0.0000000000667384
+  val G: Double = 1     // 0.0000000000667384, Unit: Nm^2/kg^2
 
   /** Method for adding a body into the space */
   def addBody(b: AstralBody) = this.bodies :+ b
