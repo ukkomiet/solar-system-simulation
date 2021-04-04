@@ -1,8 +1,9 @@
 
 
 
-class AstralBody(n: String, m: Double, r: Double, p: Vector3, velocity: Vector3) {
+class AstralBody(spaceIn: Space,n: String, m: Double, r: Double, p: Vector3, vel: Vector3) {
 
+  val space = spaceIn
 
   /** Key values of an astral body */
   val mass = m
@@ -13,9 +14,7 @@ class AstralBody(n: String, m: Double, r: Double, p: Vector3, velocity: Vector3)
   val name = n
 
   /** Velocity-vector divided into three components */
-  var velocity_x = velocity.x
-  var velocty_y = velocity.y
-  var velocity_z = velocity.z
+  var velocity = vel
 
   /** contains all gravity-forces affecting this body, calculated in the Space-class */
   var allGravities = Vector[Vector3]()
@@ -44,6 +43,24 @@ class AstralBody(n: String, m: Double, r: Double, p: Vector3, velocity: Vector3)
 
   /** Method for adding a force to the gravities vector */
   def addGravityForce(v: Vector3) = this.allGravities :+ v
+
+  /** Updates the acceleration of the body caused by all the forces in space */
+  def updateAcceleration() = acceleration = new Vector3(direction.x*getGravitySum.x/mass, direction.y*getGravitySum.y/mass, direction.z*getGravitySum.z/mass)
+
+  /** Updates the velocity for a body */
+  def updateVelocity() = {
+    this.velocity.x += this.acceleration.x * space.timeStep
+    this.velocity.y += this.acceleration.y * space.timeStep
+    this.velocity.z += this.acceleration.z * space.timeStep
+  }
+
+  /** Updates the body's position in space */
+  def updatePos() = {
+    this.pos.x += this.velocity.x
+    this.pos.y += this.velocity.y
+    this.pos.z += this.velocity.z
+  }
+
 
 
 }

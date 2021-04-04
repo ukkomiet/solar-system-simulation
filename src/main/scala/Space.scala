@@ -7,12 +7,16 @@ class Space {
 
   /** Contains all the bodies in the space */
   var bodies = Vector[AstralBody]()
-  /** Keeps track of time */
+
+  /** Keeps track of time in seconds */
   var time: Long = 0
-  /** Current timeStep set by user, this is how much time is added to 'time' after each step */
+
+  /** Current timeStep set by user, this is how much time is added to 'time' after each step. The unit
+   *  of a step is a second */
   var timeStep = 0
 
-  val G: Double = 0.0000000000667384
+  /** Holds the current Newtonian gravity-constant */
+  val G: Double = 1     // 0.0000000000667384
 
   /** Method for adding a body into the space */
   def addBody(b: AstralBody) = this.bodies :+ b
@@ -59,6 +63,20 @@ class Space {
         body.allGravities :+ gravityVectorFromAtoB(body, other)
       }
     }
+  }
+
+  /** Method for advancing in time for one timeStep in space. In the bodies-collection calculates and changes every body's
+   *  total gravities, directions, accelerations, velocities and positions in space respectively. In the end time is increased
+   *  with timeStep */
+  def advanceStepInTime() = {
+    this.updateGravitiesForBodies()
+    for (body <- bodies) {
+      body.updateDirection()
+      body.updateAcceleration()
+      body.updateVelocity()
+      body.updatePos()
+    }
+    this.time += timeStep
   }
 
 
