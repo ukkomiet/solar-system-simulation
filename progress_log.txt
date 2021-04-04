@@ -14,12 +14,15 @@ This is how I've planned the system to go:
 These following things are done each timeStep until the time-variable reaches a certain value:
 
 -> updateGravities
-
 -> calculate the total force for body -> updateDirection
-
 -> calculate the acceleration for body -> velocity = velocity + acceleration*timeStep
-
 -> updatePosition
 -> time = time + timeStep
-
 -> Repeat until time reaches ceiling
+
+
+
+4.4     All things above added except the GUI
+
+  Now I'm working on the simple GUI to produce test-systems and after I've fixed every problem that has arisen I'll move onto finding
+  a good 3D plotting system GUI library or something. Looking into that stuff afterwards.
