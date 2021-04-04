@@ -1,6 +1,5 @@
 
 
-
 class AstralBody(spaceIn: Space,n: String, m: Double, r: Double, p: Vector3, vel: Vector3) {
 
   val space = spaceIn
