@@ -26,3 +26,7 @@ These following things are done each timeStep until the time-variable reaches a 
 
   Now I'm working on the simple GUI to produce test-systems and after I've fixed every problem that has arisen I'll move onto finding
   a good 3D plotting system GUI library or something. Looking into that stuff afterwards.
+
+
+14.4
+  Unfortunately I've been rather busy with other school work and exams, so I've not had the time to continue the progress further. Though after exams I'll have more time to really push forward
