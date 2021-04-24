@@ -38,13 +38,15 @@ class AstralBody(spaceIn: Space,n: String, m: Double, r: Double, p: Vector3, vel
 
   /** Updates the direction-variable by normalizing the total gravity-force,
    *  resulting in the direction-vector of the body's acceleration */
-  def updateDirection() = direction = this.getGravitySum.normalize
+  def updateDirection() = {
+    direction = this.getGravitySum.normalize
+  }
 
   /** Method for adding a force to the gravities vector */
-  def addGravityForce(v: Vector3) = this.allGravities :+ v
+  def addGravityForce(v: Vector3) = this.allGravities = this.allGravities :+ v
 
   /** Updates the acceleration of the body caused by all the forces in space */
-  def updateAcceleration() = acceleration = new Vector3(direction.x*getGravitySum.x/mass, direction.y*getGravitySum.y/mass, direction.z*getGravitySum.z/mass)
+  def updateAcceleration() = acceleration = new Vector3(direction.x*getGravitySum.magnitude/mass, direction.y*getGravitySum.magnitude/mass, direction.z*getGravitySum.magnitude/mass)
 
   /** Updates the velocity for a body */
   def updateVelocity() = {
