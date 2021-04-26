@@ -57,9 +57,9 @@ class AstralBody(spaceIn: Space,n: String, m: Double, r: Double, p: Vector3, vel
 
   /** Updates the body's position in space */
   def updatePos() = {
-    this.pos.x += this.velocity.x
-    this.pos.y += this.velocity.y
-    this.pos.z += this.velocity.z
+    this.pos.x += this.velocity.x * space.timeStep/2
+    this.pos.y += this.velocity.y * space.timeStep/2
+    this.pos.z += this.velocity.z * space.timeStep/2
   }
 
 
