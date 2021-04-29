@@ -22,6 +22,17 @@ object testApp extends JFXApp {
     (math round n * s) / s
   }
 
+  /** Function for taking x,y,z -values from "x, y, z" */
+  def takeValues(t: String): Vector3 = {
+    var txt = t
+    val x = txt.takeWhile(_!=',')
+    txt = txt.drop(x.length+2)
+    val y = txt.takeWhile(_!=',')
+    txt = txt.drop(y.length+2)
+    val z = txt
+    new Vector3(x.toDouble, y.toDouble, z.toDouble)
+  }
+
   val space = new Space
 
   val star = new AstralBody(space, "Helmeri",900E10, 30, new Vector3(0, 0, 0), new Vector3(0,0,0))
@@ -88,8 +99,9 @@ object testApp extends JFXApp {
       var adder = new Button("Add Body")
 
       adder.onAction = (event: ActionEvent) =>  {
+        posField.getText.takeWhile(_!=',')
         var uusi = new AstralBody(space, nameField.getText, massField.getText.toDouble, radiusField.getText.toDouble,
-          new Vector3(-300,0,100), new Vector3(0,0,0))
+          takeValues(posField.getText), takeValues(veloField.getText))
         space.addBody(uusi)
         val pallo = Circle.apply(uusi.radius,Color.MistyRose)
         pallo.setEffect(new InnerShadow(uusi.radius, -uusi.radius/2, -uusi.radius/2, Color.Black))
@@ -113,7 +125,7 @@ object testApp extends JFXApp {
       var posField = new TextField
       var veloField = new TextField
       bodyVBox.children = List(new Text("Name:"), nameField, new Text("Mass:"), massField, new Text("Radius:"), radiusField,
-        new Text("Position:"), posField, new Text("Velocity:"), veloField, adder)
+        new Text("Position:  x, y, z"), posField, new Text("Velocity:  x, y, z"), veloField, adder)
 
       bodyTab.content = bodyVBox
 
