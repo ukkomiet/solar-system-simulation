@@ -16,7 +16,7 @@ class Space {
   var timeStep = 0                          // Unit: s
 
   /** Holds the current Newtonian gravity-constant */
-  val G: Double = 1     // 0.0000000000667384, Unit: Nm^2/kg^2
+  val G: Double = 0.0000000000667384     // 0.0000000000667384, Unit: Nm^2/kg^2
 
   /** Method for adding a body into the space */
   def addBody(b: AstralBody) = this.bodies = this.bodies :+ b
@@ -76,6 +76,4 @@ class Space {
     }
     this.time += timeStep
   }
-
-
 }
