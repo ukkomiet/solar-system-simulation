@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Jzy3d examples.iml" filepath="$PROJECT_DIR$/.idea/modules/Jzy3d examples.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/aurinkokunta.iml" filepath="$PROJECT_DIR$/.idea/modules/aurinkokunta.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/aurinkokunta-build.iml" filepath="$PROJECT_DIR$/.idea/modules/aurinkokunta-build.iml" />
     </modules>

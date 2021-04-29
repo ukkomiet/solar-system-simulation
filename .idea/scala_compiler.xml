@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="aurinkokunta" />
+    <profile name="sbt 1" modules="Jzy3d examples,aurinkokunta,aurinkokunta.Jzy3d examples,example.Jzy3d examples" />
   </component>
 </project>
