@@ -9,11 +9,11 @@ class Space {
   var bodies = Vector[AstralBody]()
 
   /** Keeps track of time in seconds */
-  var time: Long = 0                        // Unit: s
+  var time: Double = 0                        // Unit: s
 
   /** Current timeStep set by user, this is how much time is added to 'time' after each step. The unit
    *  of a step is a second */
-  var timeStep = 0                          // Unit: s
+  var timeStep: Double = 0                          // Unit: s
 
   /** Holds the current Newtonian gravity-constant */
   val G: Double = 0.0000000000667384     // 0.0000000000667384, Unit: Nm^2/kg^2
@@ -22,7 +22,7 @@ class Space {
   def addBody(b: AstralBody) = this.bodies = this.bodies :+ b
 
   /** Method for setting the time step */
-  def setTimeStep(t: Int) = timeStep = t
+  def setTimeStep(t: Double) = timeStep = t
 
   /** Calculates the direction vector between two points, from A to B */
   def directionAtoB(a: Vector3, b: Vector3) = {
@@ -52,6 +52,17 @@ class Space {
     res
   }
 
+  /** Method for getting the allGravities-vector without updating it */
+  def potentialGravities(a: AstralBody) = {
+    var g = Vector[Vector3]()
+    val others = bodies.filter(_!=a)
+    for (other <- others) {
+      g = g :+ gravityVectorFromAtoB(a,other)
+    }
+    g
+  }
+
+
   /** Updates the gravities in each body's allGravities-array */
   def updateGravitiesForBodies() = {
     for (body <- bodies) {
@@ -73,6 +84,8 @@ class Space {
       body.updateAcceleration()
       body.updateVelocity()
       body.updatePos()
+
+      //body.updateVelocityAndPosition()
     }
     this.time += timeStep
   }

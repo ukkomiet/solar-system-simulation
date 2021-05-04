@@ -18,15 +18,5 @@ libraryDependencies ++= javaFXModules.map( m =>
 )
 
 
-//libraryDependencies += "org.processing" % "core" % "3.5.4"
 
-
-
-resolvers += "Jzy3d releases" at "https://maven.jzy3d.org/releases/"
-
-libraryDependencies ++= Seq(
-      "org.jzy3d" % "jzy3d-api" % "1.0.2",
-      "org.jzy3d" % "jzy3d-depthpeeling" % "1.0.2",
-      "org.jzy3d" % "jzy3d-javafx" % "1.0.2"
-)
 
