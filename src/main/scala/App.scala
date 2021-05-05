@@ -43,10 +43,10 @@ object App extends JFXApp {
   val mercury = new AstralBody(space, "Mercury", 0.33E24, 2439.7E3, 2, new Vector3(57.91E9,0,0), new Vector3(0,47E3,0))
   val mars = new AstralBody(space, "Mars", 0.642E24, 3389.5E3, 4, new Vector3(227.92E9,0,0), new Vector3(0,24E3,0))
   val jupiter = new AstralBody(space, "Jupiter", 1898E24, 69911E3, 13, new Vector3(0,778.5E9,0), new Vector3(-13.07E3,0,0))
-  val saturn = new AstralBody(space, "Saturn", 568E24, 58232E3, 10, new Vector3(1433.5E9,0,0), new Vector3(0,9.7E3,0))
-  val uranus = new AstralBody(space, "Uranus", 86.8E24, 25362E3, 8, new Vector3(2872.5E9,0,0), new Vector3(0,6.8E3,0))
+  val saturn = new AstralBody(space, "Saturn", 568E24, 58232E3, 10, new Vector3(-1433.5E9,0,0), new Vector3(0,-9.7E3,0))
+  val uranus = new AstralBody(space, "Uranus", 86.8E24, 25362E3, 8, new Vector3(0,-2872.5E9,0), new Vector3(6.8E3,0,0))
   val neptune = new AstralBody(space, "Neptune", 102E24, 24622E3, 7, new Vector3(4495.1E9,0,0), new Vector3(0,5.4E3,0))
-  val pluto = new AstralBody(space, "Pluto", 0.0146E24, 1188.3E3, 2, new Vector3(5906E9,0,0), new Vector3(0,4.7E3,0))
+  val pluto = new AstralBody(space, "Pluto", 0.0146E24, 1188.3E3, 2, new Vector3(0,5906E9,0), new Vector3(-4.7E3,0,0))
   space.addBody(sun)
   space.addBody(mercury)
   space.addBody(venus)
@@ -163,6 +163,14 @@ object App extends JFXApp {
           case "Pause" => { timer.stop(); pauseButton.text = "Play" }
           case "Play" => { timer.start(); pauseButton.text = "Pause"}
         }
+      }
+
+      /** Button for toggling the satellite-trail points */
+      var toggled = false
+      val satelliteTrailToggle = new Button(s"Toggled trails off:  $toggled")
+      satelliteTrailToggle.onAction = (e: ActionEvent) => {
+        if (!toggled) {points = points.empty; maxDots=0; toggled=true; satelliteTrailToggle.text = s"Toggled trails off:  $toggled"}
+        else {maxDots=1000; toggled=false; satelliteTrailToggle.text = s"Toggled trails off:  $toggled"}
       }
 
 
@@ -325,12 +333,12 @@ object App extends JFXApp {
         else pane.children.remove(textPane)
       }
       /** Checkbox for showing the vectors of the bodies */
-      val showAccVector = new CheckBox("Show acceleration vector")
+      val showAccVector = new CheckBox("Show acceleration vectors")
       showAccVector.onAction = (e: ActionEvent) => {
         if (showAccVector.isSelected) pane.children.add(accVectorPane)
         else pane.children.remove(accVectorPane)
       }
-      val showVelVector = new CheckBox("Show velocity vector")
+      val showVelVector = new CheckBox("Show velocity vectors")
       showVelVector.onAction = (e: ActionEvent) => {
         if (showVelVector.isSelected) pane.children.add(velVectorPane)
         else pane.children.remove(velVectorPane)
@@ -403,11 +411,11 @@ object App extends JFXApp {
         pan = panField.getText.toLong
         panlevelText.text = "Pan: " + pan.toString
       }
-      val zoomlevelText = new Text("Change zoom-level: (m)")
+      val zoomlevelText = new Text("Change zoom-multiplier:")
       val zoomlevelField = new TextField
       val zoomlevelButton = new Button("Set")
       zoomlevelButton.onAction = (e: ActionEvent) => {
-        zoomLevel = zoomlevelField.getText.toDouble
+        zoomGain = zoomlevelField.getText.toDouble
         zoomText.text = "Zoom: " + zoomLevel.toString
       }
       val panHBox = new HBox
@@ -419,7 +427,7 @@ object App extends JFXApp {
       val viewVBox = new VBox
       viewVBox.setSpacing(10)
       viewVBox.children = List(pauseAndreset, resetTime, showNames, showAccVector, showVelVector, timeText, timeHBox, panText, panHBox,
-        zoomlevelText, zoomHBox)
+        zoomlevelText, zoomHBox, satelliteTrailToggle)
 
       viewTab.content = viewVBox
 
@@ -654,6 +662,7 @@ object App extends JFXApp {
         /** Updates the polylines in satelliteGraphPane */
         satelliteGraphPane.children.clear()
         for (satellite <- space.bodies.filter(_.isSatellite)) {
+
           val rect = bodyPane.children.filter(_.getId == satellite.name).head
           val p = Rectangle.apply(satellite.pos.x/zoomLevel+offSetX, satellite.pos.y/zoomLevel+offSetY, 1, 1)
           p.fill = Color.Gray
