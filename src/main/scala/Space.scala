@@ -85,7 +85,6 @@ class Space {
       body.updateVelocity()
       body.updatePos()
 
-      //body.updateVelocityAndPosition()
     }
     this.time += timeStep
   }

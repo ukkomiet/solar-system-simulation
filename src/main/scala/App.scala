@@ -39,7 +39,6 @@ object App extends JFXApp {
 
   val earth = new AstralBody(space, "Earth", 5.97E24, 6371E3,5, new Vector3(149.6E9,0,0), new Vector3(0,29.78E3,0))
   val sun = new AstralBody(space, "Sun", 1.989E30, 696340E3, 20, new Vector3(0,0,0), new Vector3(0,0,0))
-  //val moon = new AstralBody(space, "Moon", 7.34E22, 1737.1E3, 3, new Vector3(149.6E9+384.4E6, 0, 0), new Vector3(0,29.78E3+1.022E3,0))
   val venus = new AstralBody(space, "Venus", 4.86E24, 6051.8E3, 5, new Vector3(108E9,0,0), new Vector3(0,35E3,0))
   val mercury = new AstralBody(space, "Mercury", 0.33E24, 2439.7E3, 2, new Vector3(57.91E9,0,0), new Vector3(0,47E3,0))
   val mars = new AstralBody(space, "Mars", 0.642E24, 3389.5E3, 4, new Vector3(227.92E9,0,0), new Vector3(0,24E3,0))
@@ -58,9 +57,8 @@ object App extends JFXApp {
   space.addBody(uranus)
   space.addBody(neptune)
   space.addBody(pluto)
-  //space.addBody(moon)
 
-  space.setTimeStep(10000)
+  space.setTimeStep(5000)
 
   /** Class for an arrow shape */
   class Arrow(startX: Double, startY: Double, endX: Double, endY: Double, arrowSize: Double) extends Path {
@@ -119,8 +117,12 @@ object App extends JFXApp {
       var pan: Long = 15
       var zoomLevel: Double = 1E9
       val init_zoomLvl: Double = 1E9
+      var zoomGain: Double = 1.3
       val centerX: Long = 800
       val centerY: Long = 450
+
+      /** maximum amount of dots trailing satellites */
+      var maxDots = 1000
 
       /** Creates the Tab for data, which includes necessary information of
        *  the bodies in space */
@@ -173,7 +175,7 @@ object App extends JFXApp {
 
       adder.onAction = (event: ActionEvent) =>  {
 
-        val distance = dField.getText.toDouble //   x/zoomLevel+offSetX
+        val distance = dField.getText.toDouble
         var dir = takeValues(directionField.getText).normalize
         dir.x = dir.x*distance
         dir.y = dir.y*distance
@@ -211,6 +213,10 @@ object App extends JFXApp {
         dataAccordion.panes.add(titledPane)
       }
 
+      /** SatelliteGraph pane for drawing the movement-graph for satellites */
+      val satelliteGraphPane = new Pane
+      var points = Vector[Rectangle]()
+
       /** Launching satellites
        *  Adds a small body that draws a graph while moving */
       val satelliteButton = new Button("Launch")
@@ -241,6 +247,8 @@ object App extends JFXApp {
         val mass = sMass.getText.toDouble
         if (sVel.getText.toDoubleOption.isDefined) {v =sVel.getText.toDouble}
         val velocity = new Vector3(direction.x*v, direction.y*v, direction.z*v)
+        println(v)
+        println(velocity.magnitude)
         val from = space.bodies.filter(_.name == sFrom.getText).head
         val pos = from.pos
         val rect = new Rectangle
@@ -250,8 +258,8 @@ object App extends JFXApp {
         rect.id = name
         rect.setLayoutX(pos.x/zoomLevel+offSetX)
         rect.setLayoutY(pos.y/zoomLevel+offSetY)
-        val r = new Vector3(direction.x*from.radius, direction.y*from.radius, direction.z*from.radius)
-        val uusi = new AstralBody(space, name, 123, 30, 3, r.+(pos), velocity)
+        val r = new Vector3(direction.x*from.radius*2, direction.y*from.radius*2, direction.z*from.radius*2)
+        val uusi = new AstralBody(space, name, mass, 30, 3, r.+(pos), velocity)
         uusi.isSatellite = true
         uusi.isNotSatellite = false
         space.addBody(uusi)
@@ -277,6 +285,14 @@ object App extends JFXApp {
           new Text("velocity: " + roundAt(7)(uusi.velocity.magnitude) + " m/s"))
         titledPane.content = vbox
         dataAccordion.panes.add(titledPane)
+
+        /** Adds the satellite as a point-array into satelliteGraphPane */
+        val point = Rectangle.apply(uusi.pos.x/zoomLevel+offSetX, uusi.pos.y/zoomLevel+offSetY,1, 1)
+        point.fill = Color.White
+        satelliteGraphPane.children.add(point)
+        points = points :+ point
+
+
       }
 
       /** Tab for adding bodies and launching satellites */
@@ -474,10 +490,16 @@ object App extends JFXApp {
       spaceTime.fill = Color.White
       topleftVBox.children = List(zoomText, panlevelText, spaceTime)
 
-      pane.children = List(bodyPane, textPane, topleftVBox)
+
+
+
+
+      pane.children = List(bodyPane, satelliteGraphPane, textPane, topleftVBox)
       tabPane.tabs = List(dataTab, viewTab, bodyTab)
       border.center = pane
       border.left = tabPane
+
+
 
 
 
@@ -490,12 +512,13 @@ object App extends JFXApp {
         pane.requestFocus()
       }
       pane.onKeyPressed = (e: KeyEvent) => {
-        if (e.code == KeyCode.W) offSetY += pan
-        else if (e.code == KeyCode.S) offSetY -= pan
-        else if (e.code == KeyCode.A) {offSetX += pan}
-        else if (e.code == KeyCode.D) {offSetX -= pan}
+        if (e.code == KeyCode.W) {offSetY += pan; points = points.empty}
+        else if (e.code == KeyCode.S) {offSetY -= pan; points = points.empty}
+        else if (e.code == KeyCode.A) {offSetX += pan; points = points.empty}
+        else if (e.code == KeyCode.D) {offSetX -= pan; points = points.empty}
         else if (e.code == KeyCode.Up) {
-          zoomLevel = zoomLevel/2
+          points = points.empty
+          zoomLevel = zoomLevel/zoomGain
           zoomText.text = "Zoom: " + zoomLevel.toString
           /** Changing the radius of the circles depending on zoomLevel
            *  When zooming into the picture, the radius of each body will rise */
@@ -532,7 +555,8 @@ object App extends JFXApp {
 
         }
         else if (e.code == KeyCode.Down) {
-          zoomLevel = zoomLevel*2
+          points = points.empty
+          zoomLevel = zoomLevel*zoomGain
           zoomText.text = "Zoom: " + zoomLevel.toString
 
           /** Changing the radius of the circles depending on zoomLevel.
@@ -613,6 +637,7 @@ object App extends JFXApp {
         }
 
 
+
         /** Updates the data in the data tab */
         for (b <- space.bodies) {
           val d = space.distanceBetweenBodies(b,sun)
@@ -620,11 +645,22 @@ object App extends JFXApp {
           vbox.setSpacing(10)
           vbox.setPrefWidth(200)
           vbox.children = List(new Text("mass: " + b.mass + " kg"),
-            new Text("d from Sun: " + round(10*(space.distanceBetweenBodies(b, sun)))/10 + " m"),
+            new Text("d from Sun: " + (round(100*(space.distanceBetweenBodies(b, sun)))/100).toDouble + " m"),
             new Text("acceleration: " + roundAt(7)(b.acceleration.magnitude) + " m/s^2"),
             new Text("velocity: " + roundAt(7)(b.velocity.magnitude) + " m/s"))
           dataAccordion.panes.get(space.bodies.indexOf(b)).content = vbox
         }
+
+        /** Updates the polylines in satelliteGraphPane */
+        satelliteGraphPane.children.clear()
+        for (satellite <- space.bodies.filter(_.isSatellite)) {
+          val rect = bodyPane.children.filter(_.getId == satellite.name).head
+          val p = Rectangle.apply(satellite.pos.x/zoomLevel+offSetX, satellite.pos.y/zoomLevel+offSetY, 1, 1)
+          p.fill = Color.Gray
+          points = points :+ p
+          if (points.size >= maxDots) points = points.drop(1)
+        }
+        for (n <- points) satelliteGraphPane.children.add(n)
 
         spaceTime.text = "Time: " + round(space.time/(3600*24)) + " days"
 
