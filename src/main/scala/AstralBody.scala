@@ -1,7 +1,7 @@
 
 import scala.math._
 
-class AstralBody(spaceIn: Space,n: String, m: Double, r: Double, p: Vector3, vel: Vector3) {
+class AstralBody(spaceIn: Space,n: String, m: Double, r: Double, drawR: Long, p: Vector3, vel: Vector3) {
 
   val space = spaceIn
 
@@ -10,8 +10,13 @@ class AstralBody(spaceIn: Space,n: String, m: Double, r: Double, p: Vector3, vel
   val radius = r                             // Unit: m
   /** Position of the body in (x, y, z) */
   var pos = p                                // Unit: m ( as in distance from point (0,0,0) )
+  /** Defines how big the drawn body is */
+  var drawRadius = drawR
 
   val name = n
+
+  var isSatellite: Boolean = false
+  var isNotSatellite = !isSatellite
 
   /** Velocity-vector divided into three components */
   var velocity = vel                         // Unit: m
