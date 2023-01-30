@@ -37,16 +37,16 @@ object App extends JFXApp {
   /** Initializing space */
   val space = new Space
 
-  val earth = new AstralBody(space, "Earth", 5.97E24, 6371E3,5, new Vector3(149.6E9,0,0), new Vector3(0,29.78E3,0))
-  val sun = new AstralBody(space, "Sun", 1.989E30, 696340E3, 20, new Vector3(0,0,0), new Vector3(0,0,0))
-  val venus = new AstralBody(space, "Venus", 4.86E24, 6051.8E3, 5, new Vector3(108E9,0,0), new Vector3(0,35E3,0))
-  val mercury = new AstralBody(space, "Mercury", 0.33E24, 2439.7E3, 2, new Vector3(57.91E9,0,0), new Vector3(0,47E3,0))
-  val mars = new AstralBody(space, "Mars", 0.642E24, 3389.5E3, 4, new Vector3(227.92E9,0,0), new Vector3(0,24E3,0))
-  val jupiter = new AstralBody(space, "Jupiter", 1898E24, 69911E3, 13, new Vector3(0,778.5E9,0), new Vector3(-13.07E3,0,0))
-  val saturn = new AstralBody(space, "Saturn", 568E24, 58232E3, 10, new Vector3(-1433.5E9,0,0), new Vector3(0,-9.7E3,0))
-  val uranus = new AstralBody(space, "Uranus", 86.8E24, 25362E3, 8, new Vector3(0,-2872.5E9,0), new Vector3(6.8E3,0,0))
-  val neptune = new AstralBody(space, "Neptune", 102E24, 24622E3, 7, new Vector3(4495.1E9,0,0), new Vector3(0,5.4E3,0))
-  val pluto = new AstralBody(space, "Pluto", 0.0146E24, 1188.3E3, 2, new Vector3(0,5906E9,0), new Vector3(-4.7E3,0,0))
+  val earth = new AstralBody(space, "Earth", 5.97E24, 6371E3,3, new Vector3(149.6E9,0,0), new Vector3(0,29.78E3,0))
+  val sun = new AstralBody(space, "Sun", 1.989E30, 696340E3, 12, new Vector3(0,0,0), new Vector3(0,0,0))
+  val venus = new AstralBody(space, "Venus", 4.86E24, 6051.8E3, 3, new Vector3(108E9,0,0), new Vector3(0,35E3,0))
+  val mercury = new AstralBody(space, "Mercury", 0.33E24, 2439.7E3, 1, new Vector3(57.91E9,0,0), new Vector3(0,47E3,0))
+  val mars = new AstralBody(space, "Mars", 0.642E24, 3389.5E3, 2, new Vector3(227.92E9,0,0), new Vector3(0,24E3,0))
+  val jupiter = new AstralBody(space, "Jupiter", 1898E24, 69911E3, 10, new Vector3(0,778.5E9,0), new Vector3(-13.07E3,0,0))
+  val saturn = new AstralBody(space, "Saturn", 568E24, 58232E3, 8, new Vector3(-1433.5E9,0,0), new Vector3(0,-9.7E3,0))
+  val uranus = new AstralBody(space, "Uranus", 86.8E24, 25362E3, 6, new Vector3(0,-2872.5E9,0), new Vector3(6.8E3,0,0))
+  val neptune = new AstralBody(space, "Neptune", 102E24, 24622E3, 5, new Vector3(4495.1E9,0,0), new Vector3(0,5.4E3,0))
+  val pluto = new AstralBody(space, "Pluto", 0.0146E24, 1188.3E3, 1, new Vector3(0,5906E9,0), new Vector3(-4.7E3,0,0))
   space.addBody(sun)
   space.addBody(mercury)
   space.addBody(venus)
@@ -102,7 +102,7 @@ object App extends JFXApp {
   stage = new JFXApp.PrimaryStage {
 
 
-    title = "testApp"
+    title = "Solar system simulation"
     scene = new Scene(1700,900) {
 
       content = List()
@@ -499,16 +499,10 @@ object App extends JFXApp {
       topleftVBox.children = List(zoomText, panlevelText, spaceTime)
 
 
-
-
-
       pane.children = List(bodyPane, satelliteGraphPane, textPane, topleftVBox)
       tabPane.tabs = List(dataTab, viewTab, bodyTab)
       border.center = pane
       border.left = tabPane
-
-
-
 
 
       root = border

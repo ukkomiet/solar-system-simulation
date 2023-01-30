@@ -1,0 +1,322 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "aurinkokunta",
+        "directory": "C:\\Users\\Ukko\\IdeaProjects\\aurinkokunta",
+        "workspaceDir": "C:\\Users\\Ukko\\IdeaProjects\\aurinkokunta",
+        "sources": [
+            "C:\\Users\\Ukko\\IdeaProjects\\aurinkokunta\\src\\main\\scala",
+            "C:\\Users\\Ukko\\IdeaProjects\\aurinkokunta\\src\\main\\scala-2.13",
+            "C:\\Users\\Ukko\\IdeaProjects\\aurinkokunta\\src\\main\\scala-2",
+            "C:\\Users\\Ukko\\IdeaProjects\\aurinkokunta\\src\\main\\java",
+            "C:\\Users\\Ukko\\IdeaProjects\\aurinkokunta\\target\\scala-2.13\\src_managed\\main"
+        ],
+        "dependencies": [
+            
+        ],
+        "classpath": [
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.5\\scala-library-2.13.5.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scalafx\\scalafx_2.13\\14-R19\\scalafx_2.13-14-R19.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-base\\14.0.1\\javafx-base-14.0.1-win.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-controls\\14.0.1\\javafx-controls-14.0.1-win.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-fxml\\14.0.1\\javafx-fxml-14.0.1-win.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-graphics\\14.0.1\\javafx-graphics-14.0.1-win.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-media\\14.0.1\\javafx-media-14.0.1-win.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-swing\\14.0.1\\javafx-swing-14.0.1-win.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-web\\14.0.1\\javafx-web-14.0.1-win.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-reflect\\2.13.5\\scala-reflect-2.13.5.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-graphics\\14.0.1\\javafx-graphics-14.0.1.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-controls\\14.0.1\\javafx-controls-14.0.1.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-base\\14.0.1\\javafx-base-14.0.1.jar",
+            "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-media\\14.0.1\\javafx-media-14.0.1.jar"
+        ],
+        "out": "C:\\Users\\Ukko\\IdeaProjects\\aurinkokunta\\.bloop\\aurinkokunta",
+        "classesDir": "C:\\Users\\Ukko\\IdeaProjects\\aurinkokunta\\.bloop\\aurinkokunta\\scala-2.13\\classes",
+        "resources": [
+            "C:\\Users\\Ukko\\IdeaProjects\\aurinkokunta\\src\\main\\resources",
+            "C:\\Users\\Ukko\\IdeaProjects\\aurinkokunta\\target\\scala-2.13\\resource_managed\\main"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.13.5",
+            "options": [
+                
+            ],
+            "jars": [
+                "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-compiler\\2.13.5\\scala-compiler-2.13.5.jar",
+                "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.5\\scala-library-2.13.5.jar",
+                "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-reflect\\2.13.5\\scala-reflect-2.13.5.jar",
+                "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\jline\\jline\\3.19.0\\jline-3.19.0.jar",
+                "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\net\\java\\dev\\jna\\jna\\5.3.1\\jna-5.3.1.jar"
+            ],
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "C:\\Program Files\\Java\\jdk-11.0.10",
+                "options": [
+                    "-Duser.dir=C:\\Users\\Ukko\\IdeaProjects\\aurinkokunta"
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.5",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.5\\scala-library-2.13.5.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.5\\scala-library-2.13.5-sources.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.5\\scala-library-2.13.5-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scalafx",
+                    "name": "scalafx_2.13",
+                    "version": "14-R19",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scalafx_2.13",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scalafx\\scalafx_2.13\\14-R19\\scalafx_2.13-14-R19.jar"
+                        },
+                        {
+                            "name": "scalafx_2.13",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scalafx\\scalafx_2.13\\14-R19\\scalafx_2.13-14-R19-sources.jar"
+                        },
+                        {
+                            "name": "scalafx_2.13",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scalafx\\scalafx_2.13\\14-R19\\scalafx_2.13-14-R19-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-reflect",
+                    "version": "2.13.5",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-reflect",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-reflect\\2.13.5\\scala-reflect-2.13.5.jar"
+                        },
+                        {
+                            "name": "scala-reflect",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-reflect\\2.13.5\\scala-reflect-2.13.5-sources.jar"
+                        },
+                        {
+                            "name": "scala-reflect",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-reflect\\2.13.5\\scala-reflect-2.13.5-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.openjfx",
+                    "name": "javafx-graphics",
+                    "version": "14.0.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "javafx-graphics",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-graphics\\14.0.1\\javafx-graphics-14.0.1.jar"
+                        },
+                        {
+                            "name": "javafx-graphics",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-graphics\\14.0.1\\javafx-graphics-14.0.1-sources.jar"
+                        },
+                        {
+                            "name": "javafx-graphics",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-graphics\\14.0.1\\javafx-graphics-14.0.1-javadoc.jar"
+                        },
+                        {
+                            "name": "javafx-graphics",
+                            "classifier": "win",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-graphics\\14.0.1\\javafx-graphics-14.0.1-win.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.openjfx",
+                    "name": "javafx-controls",
+                    "version": "14.0.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "javafx-controls",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-controls\\14.0.1\\javafx-controls-14.0.1.jar"
+                        },
+                        {
+                            "name": "javafx-controls",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-controls\\14.0.1\\javafx-controls-14.0.1-sources.jar"
+                        },
+                        {
+                            "name": "javafx-controls",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-controls\\14.0.1\\javafx-controls-14.0.1-javadoc.jar"
+                        },
+                        {
+                            "name": "javafx-controls",
+                            "classifier": "win",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-controls\\14.0.1\\javafx-controls-14.0.1-win.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.openjfx",
+                    "name": "javafx-base",
+                    "version": "14.0.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "javafx-base",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-base\\14.0.1\\javafx-base-14.0.1.jar"
+                        },
+                        {
+                            "name": "javafx-base",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-base\\14.0.1\\javafx-base-14.0.1-sources.jar"
+                        },
+                        {
+                            "name": "javafx-base",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-base\\14.0.1\\javafx-base-14.0.1-javadoc.jar"
+                        },
+                        {
+                            "name": "javafx-base",
+                            "classifier": "win",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-base\\14.0.1\\javafx-base-14.0.1-win.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.openjfx",
+                    "name": "javafx-media",
+                    "version": "14.0.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "javafx-media",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-media\\14.0.1\\javafx-media-14.0.1.jar"
+                        },
+                        {
+                            "name": "javafx-media",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-media\\14.0.1\\javafx-media-14.0.1-sources.jar"
+                        },
+                        {
+                            "name": "javafx-media",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-media\\14.0.1\\javafx-media-14.0.1-javadoc.jar"
+                        },
+                        {
+                            "name": "javafx-media",
+                            "classifier": "win",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\openjfx\\javafx-media\\14.0.1\\javafx-media-14.0.1-win.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.5",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.5\\scala-library-2.13.5.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.5\\scala-library-2.13.5-sources.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Ukko\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.5\\scala-library-2.13.5-javadoc.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "library"
+        ]
+    }
+}

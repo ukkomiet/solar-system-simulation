@@ -1,0 +1,21 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging C:\Users\Ukko\IdeaProjects\aurinkokunta\target\scala-2.13\aurinkokunta_2.13-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	App$$anon$1$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Ukko\IdeaProjects\aurinkokunta\target\scala-2.13\classes\App$$anon$1$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	App$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Ukko\IdeaProjects\aurinkokunta\target\scala-2.13\classes\App$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	App$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Ukko\IdeaProjects\aurinkokunta\target\scala-2.13\classes\App$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	App$Arrow.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Ukko\IdeaProjects\aurinkokunta\target\scala-2.13\classes\App$Arrow.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	App$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Ukko\IdeaProjects\aurinkokunta\target\scala-2.13\classes\App$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	App.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Ukko\IdeaProjects\aurinkokunta\target\scala-2.13\classes\App.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AstralBody.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Ukko\IdeaProjects\aurinkokunta\target\scala-2.13\classes\AstralBody.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Space.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Ukko\IdeaProjects\aurinkokunta\target\scala-2.13\classes\Space.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Vector3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Ukko\IdeaProjects\aurinkokunta\target\scala-2.13\classes\Vector3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

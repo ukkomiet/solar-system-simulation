@@ -1,0 +1,122 @@
+2023.01.25 19:43:56 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\Ukko\IdeaProjects\aurinkokunta\.metals\lsp.trace.json or C:\Users\Ukko\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2023.01.25 19:43:56 INFO  logging to file C:\Users\Ukko\IdeaProjects\aurinkokunta\.metals\metals.log
+2023.01.25 19:43:56 INFO  Started: Metals version 0.11.10 in workspace 'C:\Users\Ukko\IdeaProjects\aurinkokunta' for client Visual Studio Code 1.74.3.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/C:/Users/Ukko/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.10.5/scribe-slf4j_2.13-3.10.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.01.25 19:43:58 INFO  time: initialize in 1.47s
+2023.01.25 19:43:59 WARN  Build server is not auto-connectable.
+2023.01.25 19:44:04 WARN  no build target for: C:\Users\Ukko\IdeaProjects\aurinkokunta\src\main\scala\App.scala
+2023.01.25 19:44:09 INFO  no build target found for C:\Users\Ukko\IdeaProjects\aurinkokunta\src\main\scala\App.scala. Using presentation compiler with project's scala-library version: 3.2.1
+2023.01.25 19:44:09 WARN  no build target for: C:\Users\Ukko\IdeaProjects\aurinkokunta\src\main\scala\AstralBody.scala
+2023.01.25 19:44:10 INFO  time: code lens generation in 1.34s
+2023.01.25 19:44:10 INFO  time: code lens generation in 5.35s
+2023.01.25 19:44:19 WARN  no build target for: C:\Users\Ukko\IdeaProjects\aurinkokunta\src\main\scala\Space.scala
+2023.01.25 19:44:27 WARN  no build target for: C:\Users\Ukko\IdeaProjects\aurinkokunta\src\main\scala\Vector3.scala
+2023.01.25 19:44:29 WARN  no build target for: C:\Users\Ukko\IdeaProjects\aurinkokunta\src\main\scala\AstralBody.scala
+2023.01.25 19:44:31 WARN  no build target for: C:\Users\Ukko\IdeaProjects\aurinkokunta\src\main\scala\App.scala
+tammik. 25, 2023 7:44:53 IP. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2023.01.25 19:45:16 WARN  no build target for: C:\Users\Ukko\IdeaProjects\aurinkokunta\build.sbt
+2023.01.25 19:45:23 WARN  no build target for: C:\Users\Ukko\IdeaProjects\aurinkokunta\src\main\scala\App.scala
+2023.01.25 19:45:25 WARN  no build target for: C:\Users\Ukko\IdeaProjects\aurinkokunta\src\main\scala\App.scala
+tammik. 25, 2023 7:45:25 IP. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\Ukko\IdeaProjects\aurinkokunta\src\main\scala\App.scala
+java.util.concurrent.CompletionException: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\Ukko\IdeaProjects\aurinkokunta\src\main\scala\App.scala
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:331)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:743)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:731)
+	at java.base/java.util.concurrent.CompletableFuture.thenAcceptAsync(CompletableFuture.java:2112)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.thenAccept(FutureConvertersImpl.scala:37)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:279)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\Ukko\IdeaProjects\aurinkokunta\src\main\scala\App.scala
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:400)
+	at scala.meta.internal.metals.MetalsLanguageServer.executeCommand(MetalsLanguageServer.scala:2012)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	... 9 more
+
+2023.01.25 19:45:29 WARN  no build target for: C:\Users\Ukko\IdeaProjects\aurinkokunta\build.sbt
+2023.01.25 19:45:32 WARN  no build target for: C:\Users\Ukko\IdeaProjects\aurinkokunta\build.sbt
+tammik. 25, 2023 7:45:32 IP. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\Ukko\IdeaProjects\aurinkokunta\build.sbt
+java.util.concurrent.CompletionException: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\Ukko\IdeaProjects\aurinkokunta\build.sbt
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:331)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:743)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:731)
+	at java.base/java.util.concurrent.CompletableFuture.thenAcceptAsync(CompletableFuture.java:2112)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.thenAccept(FutureConvertersImpl.scala:37)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:279)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\Ukko\IdeaProjects\aurinkokunta\build.sbt
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:400)
+	at scala.meta.internal.metals.MetalsLanguageServer.executeCommand(MetalsLanguageServer.scala:2012)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	... 9 more
+
+2023.01.25 19:45:38 INFO  running 'C:\Program Files\Java\jdk-11.0.10\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\Ukko\AppData\Local\Temp\metals3192560318001309115\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2023.01.25 19:45:39 INFO  [info] welcome to sbt 1.4.7 (Oracle Corporation Java 11.0.10)
+2023.01.25 19:45:40 INFO  [info] loading global plugins from C:\Users\Ukko\.sbt\1.0\plugins
+2023.01.25 19:45:42 INFO  [info] loading settings for project aurinkokunta-build-build from metals.sbt ...
+2023.01.25 19:45:42 INFO  [info] loading project definition from C:\Users\Ukko\IdeaProjects\aurinkokunta\project\project
+2023.01.25 19:45:44 INFO  [info] loading settings for project aurinkokunta-build from metals.sbt ...
+2023.01.25 19:45:44 INFO  [info] loading project definition from C:\Users\Ukko\IdeaProjects\aurinkokunta\project
+2023.01.25 19:45:46 INFO  [success] Generated .bloop\aurinkokunta-build.json
+2023.01.25 19:45:46 INFO  [success] Total time: 2 s, completed 25.1.2023 klo 19.45.46
+2023.01.25 19:45:47 INFO  [info] loading settings for project aurinkokunta from build.sbt ...
+2023.01.25 19:45:47 INFO  [info] set current project to aurinkokunta (in build file:/C:/Users/Ukko/IdeaProjects/aurinkokunta/)
+2023.01.25 19:45:47 INFO  [success] Generated .bloop\aurinkokunta.json
+2023.01.25 19:45:47 INFO  [success] Generated .bloop\aurinkokunta-test.json
+2023.01.25 19:45:47 INFO  [success] Total time: 0 s, completed 25.1.2023 klo 19.45.47
+2023.01.25 19:45:47 INFO  time: ran 'sbt bloopInstall' in 9.52s
+2023.01.25 19:45:47 INFO  Attempting to connect to the build server...
+2023.01.25 19:45:47 INFO  Setting up current java home C:\Program Files\Java\jdk-11.0.10 in C:\Users\Ukko\.bloop\bloop.json
+2023.01.25 19:45:56 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\Ukko\IdeaProjects\aurinkokunta\.metals\bsp.trace.json or C:\Users\Ukko\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.01.25 19:45:58 INFO  Attempting to connect to the build server...
+2023.01.25 19:45:58 INFO  Bloop uses C:\Program Files\Java\jdk-11.0.10 defined at C:\Users\Ukko\.bloop\bloop.json
+2023.01.25 19:45:58 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\Ukko\IdeaProjects\aurinkokunta\project\.metals\bsp.trace.json or C:\Users\Ukko\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.01.25 19:46:00 INFO  time: Connected to build server in 12s
+2023.01.25 19:46:00 INFO  Connected to Build server: Bloop v1.5.6
+2023.01.25 19:46:00 INFO  time: Imported build in 0.14s
+2023.01.25 19:46:05 INFO  time: indexed workspace in 5.35s
+2023.01.25 19:46:10 INFO  time: code lens generation in 3.98s
+2023.01.25 19:46:23 INFO  compiling aurinkokunta (4 scala sources)
+2023.01.25 19:46:25 INFO  Deduplicating compilation of aurinkokunta from bsp client 'Metals 0.11.10' (since 29.662s)
+2023.01.25 19:46:25 INFO  compiling aurinkokunta (4 scala sources)
+2023.01.25 19:46:35 WARN  14 deprecations; re-run with -deprecation for details
+2023.01.25 19:46:35 WARN  14 deprecations; re-run with -deprecation for details
+2023.01.25 19:46:35 INFO  time: compiled aurinkokunta in 9.76s
+2023.01.25 20:03:44 INFO  shutting down Metals
+2023.01.25 20:03:44 INFO  Shut down connection with build server.
+2023.01.25 20:03:44 INFO  Shut down connection with build server.
